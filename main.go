@@ -39,3 +39,4 @@ func printError() {
 func printAge(age int) {
 	fmt.Printf("твой возраст - %d.\nМожешь пройти", age)
 }
+//ndfjknsdkof
