@@ -5,38 +5,19 @@ import(
 )
 
 func main() {
-	age := GetAge()
-	CheckAge(age, 18)
+	name := GetUserInfo("Введите имя")
+	surname := GetUserInfo("Введите фамилию")
+	fmt.Println(name, surname)
 }
 
-func GetAge() int {
-	var age int
-	fmt.Println("Сколько тебе лет?")
+func GetUserInfo(str string) string {
+var info string = "" 
 
-	if _, err := fmt.Scanf("%d\n", &age); err !=nil {
-	fmt.Println(err)
-	return age
-}
-	return age
-}
+fmt.Println(str) 
 
-func CheckAge(age, limitAge int) {
-	if age >= limitAge {
-	printAge(age)
-	return
-} else if age == 18 {
-		fmt.Println("Проходи, бродяга")
-		return
+if _, err := fmt.Scanf("%s\n", &info); err != nil{
+fmt.Println(err)
+return info
 }
-	printError()
+return info
 }
-
-func printError() {
-
-	fmt.Println("вы не можете пройти!")
-}
-
-func printAge(age int) {
-	fmt.Printf("твой возраст - %d.\nМожешь пройти", age)
-}
-//.dlpsa.p
