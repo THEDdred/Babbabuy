@@ -1,23 +1,39 @@
 package main
 
-import(
-	"fmt"
-)
+import "fmt"
 
 func main() {
-	name := GetUserInfo("Введите имя")
-	surname := GetUserInfo("Введите фамилию")
-	fmt.Println(name, surname)
+	generateTriangle(5)
+	ganerateRect(5)
+	
 }
 
-func GetUserInfo(str string) string {
-var info string = "" 
+func ganerateRect(size int) {
+	for i := 1; i < size; i++ {
+		for j := 1; j < size-i; j++ {
+			fmt.Print(" ")
+		}
 
-fmt.Println(str) 
+		for j := 1; j <= 2*i-1; j++ {
+			fmt.Print("*")
+		}
+			fmt.Println()
 
-if _, err := fmt.Scanf("%s\n", &info); err != nil{
-fmt.Println(err)
-return info
+	}
+
 }
-return info
+
+
+func generateTriangle(size int) {
+	for i := size; i >= 1; i-- {
+		for j := 1; j <= size-i; j++ {
+			fmt.Print(" ")
+		}
+
+		for j := 1; j <= 2*i-1; j++ {
+			fmt.Print("*")
+		}
+
+		fmt.Println()
+	}
 }
